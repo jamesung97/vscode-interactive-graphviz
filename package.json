@@ -1,8 +1,8 @@
 {
-    "name": "graphviz-interactive-preview",
-    "displayName": "Graphviz Interactive Preview",
+    "name": "james-graphviz-interactive-preview",
+    "displayName": "James's Graphviz Interactive Preview",
     "description": "Graphviz (dot) Interactive Preview",
-    "version": "0.3.5",
+    "version": "0.3.5.2",
     "keywords": [
         "dot",
         "graphviz",
@@ -23,14 +23,11 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/tintinweb/vscode-interactive-graphviz"
+        "url": "https://github.com/tintinweb/https://github.com/jamesung97/vscode-interactive-graphviz-interactive-graphviz"
     },
     "main": "./dist/extension.js",
     "browser": "./dist/extension.js",
-    "activationEvents": [
-        "onCommand:graphviz-interactive-preview.preview.beside",
-        "onLanguage:dot"
-    ],
+    "activationEvents": [],
     "contributes": {
         "languages": [
             {
@@ -75,14 +72,14 @@
                 {
                     "command": "graphviz-interactive-preview.preview.beside",
                     "group": "graphviz",
-                    "when": "resourceLangId == dot"
+                    "when": "resourceLangId == dot || isGraphvizInteractivePreviewActive"
                 }
             ],
             "editor/title": [
                 {
                     "command": "graphviz-interactive-preview.preview.beside",
                     "group": "navigation@-99",
-                    "when": "resourceLangId == dot"
+                    "when": "resourceLangId == dot || isGraphvizInteractivePreviewActive"
                 }
             ]
         },
@@ -111,7 +108,7 @@
                 },
                 "graphviz-interactive-preview.preserveFocus": {
                     "type": "boolean",
-                    "default": true,
+                    "default": false,
                     "description": "Keep the focus on the currently active window."
                 },
                 "graphviz-interactive-preview.debouncingInterval": {
